@@ -39,18 +39,18 @@ export class QueryParser<U extends T> {
     key = right;
     value = left;
 
-    key.replace(/"([^']+)"/g, (match) => {
+    key?.replace(/"([^']+)"/g, (match) => {
       key = match;
       return '';
     });
 
-    value.replace(/"([^']+)"/g, (match) => {
+    value?.replace(/"([^']+)"/g, (match) => {
       value = match;
       return '';
     });
 
-    key = key.replace(/^"(.*)"$/, '$1');
-    value = value.replace(/^"(.*)"$/, '$1');
+    key = key?.replace(/^"(.*)"$/, '$1');
+    value = value?.replace(/^"(.*)"$/, '$1');
     this.filterObj = { [key]: { [operator as string]: value } };
 
     return this;
