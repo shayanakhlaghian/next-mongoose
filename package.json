@@ -1,6 +1,6 @@
 {
   "name": "@shayanakhlaghian/next-mongoose",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "mongoose and mongodb helper for next js apps",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
