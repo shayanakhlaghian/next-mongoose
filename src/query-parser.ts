@@ -69,8 +69,8 @@ export class QueryParser<U extends T> {
   }
 
   paginate(defaultPage = 1, defaultLimit = 10) {
-    const page = parseInt(this.query.page as string, 10) || defaultPage;
-    this.limit = parseInt(this.query.limit as string, 10) || defaultLimit;
+    const page = Math.abs(parseInt(this.query.page as string, 10)) || defaultPage;
+    this.limit = Math.abs(parseInt(this.query.limit as string, 10)) || defaultLimit;
     this.skip = this.limit * (page - 1);
 
     return this;
